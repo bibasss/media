@@ -1,0 +1,142 @@
+.message_user_interface{
+    position: absolute;
+    margin: 69px 290px;
+    width: 850px;
+    height: 60px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.message_interface_item1{
+    color: black;
+
+}
+
+.message_interface_item2{
+    position: absolute;
+    margin: 15px 30px;
+    font-size: 35px;
+    color: black;
+}
+.message_interface_item3{
+    position: absolute;
+    margin: 17px 65px;
+    font-size: 25px;
+    color: black;
+}
+
+.message_user_interface_ava{
+    position: absolute;
+    margin: 5px 780px;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.message_user_interface-username{
+    position: absolute;
+    margin: 13px 350px;
+    font-size: 20px;
+}
+.offline{
+    position: absolute;
+    margin: 39px 370px;
+    font-size: 15px;
+}
+
+
+.message_interface {
+    position: absolute;
+    margin: 129px 290px;
+    width: 850px;
+    min-height: 630px;
+    max-height: 630px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.message_interface_sender_message{
+    margin: 10px 100px;
+}
+
+
+.message_interface_all{
+    position: relative;
+    width: 550px;
+    top: 35px;
+    margin-top: -65px;
+}
+
+.message_interface_sender_ava_into{
+    position: absolute;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    overflow: hidden;
+}
+.message_interface_sender_name_into{
+    margin: 10px 60px;
+    position: absolute;
+}
+.message_interface_sender_time_into{
+    position: absolute;
+    margin: 28px 60px;
+    color: silver;
+
+}
+.message_interface_sender_message_into{
+    position: relative;
+    width: 400px;
+    margin: 57px 25px;
+}
+
+
+.message_interface_message2{
+    position: relative;
+    width: 550px;
+    height: 100px;
+    margin-top: -15px;
+}
+
+.message_interface_sender_message_into2{
+    position: relative;
+    width: 400px;
+    margin: 37px 25px;
+}
+
+
+.write_message_interface{
+    position: fixed;
+    margin: 743px 290px;
+    width: 850px;
+    height: 70px;
+    background-color: silver;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
+.message_write_message{
+    position: absolute;
+    margin: -25px 10px;
+    width: 500px;
+    height: 40px;
+}
+
+.ico_for_send-inmessage{
+    position: absolute;
+    margin: -25px 550px;
+    font-size: 30px;
+}
+
+.chat-input{
+    position: absolute;
+    margin: 790px 350px;
+}
+
+.no_message{
+    position: absolute;
+    margin: -350px 250px;
+}

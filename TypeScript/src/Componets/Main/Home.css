@@ -1,0 +1,44 @@
+.Home_Posts{
+    position: absolute;
+    margin: 75px 220px;
+    width: 850px;
+    height: 500px;
+    border-radius: 15px;
+}
+.posts{
+    margin: 10px 100px;
+    width: 600px;
+    height: 500px;
+    border-radius: 15px;
+    box-shadow:  rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: white;
+}
+
+.home_post_user_ava{
+    position: absolute;
+    margin: 20px 40px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 100%;
+}
+.home_post_username{
+    position: absolute;
+    margin: 30px 110px;
+}
+
+.home_post_time{
+    position: absolute;
+    margin: 50px 110px;
+
+}
+.home_post_img{
+    position: absolute;
+    margin: 110px 50px;
+    width: 500px;
+    height: 350px;
+    border-radius: 15px;
+    object-fit: cover;
+    overflow: hidden;
+}

@@ -1,0 +1,93 @@
+.Tobe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    box-shadow:  rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.tobe_logout_button{
+    background-color: black; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.tobe_show_this_username{
+    position: absolute;
+    margin: 15px 1300px;
+    font-size: 20px;
+    color: black;
+}
+.tobe_show_this_username button{
+    width: 40px;
+    height: 20px;
+}
+.Logout{
+    position: absolute;
+    margin: 18px 1350px;
+
+}
+.tobe_for_changecolor{
+    position: absolute;
+    margin: 15px 150px;
+}
+.Moon{
+    position: absolute;
+    margin: 9px 110px;
+    font-size: 30px;
+    color: black;
+}
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+.dark-mode .friend-item{
+    background-color: #282828;
+}
+.dark-mode .profil_friends_block,
+.dark-mode .profile_createpost_block,
+.dark-mode .message_user_interface,
+.dark-mode .message_interface,
+.dark-mode .Profile_info_about_me,
+.dark-mode .Profile_user_posts,
+.dark-mode .Tobe,
+.dark-mode .LeviBlock,
+.dark-mode .posts,
+.dark-mode .priends_maincontent {
+    background-color: #282828;
+}
+.dark-mode a{
+    color: white;
+    text-decoration: none;
+    background-color: #282828;
+}
+.dark-mode button {
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.dark-mode .Moon{
+    color: white;
+}
+.dark-mode .message_interface_item3,
+.dark-mode .message_interface_item2,
+.dark-mode .profile_post_name,
+.dark-mode .profile_post_time,
+.dark-mode .profile_user_name,
+.dark-mode .friends_name,
+.dark-mode .home_post_username,
+.dark-mode .home_post_time,
+.dark-mode .friends_location{
+    color: white;
+}

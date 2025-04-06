@@ -1,0 +1,30 @@
+.chats_maincontent{
+    position: absolute;
+    margin: 80px 290px;
+    width: 1050px;
+    border-radius: 15px;
+    min-height: 500px;
+    height: auto;
+    box-shadow:  rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: white;
+}
+
+
+.chats_sender_ava{
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.chats_sender_name{
+
+}
+
+.chats_sender_message{
+
+}
+.chats_sender_mesage_time{
+
+}

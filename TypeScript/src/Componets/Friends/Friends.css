@@ -1,0 +1,77 @@
+.priends_maincontent{
+    position: absolute;
+    margin: 80px 290px;
+    width: 1050px;
+    border-radius: 15px;
+    min-height: 500px;
+    height: auto;
+    box-shadow:  rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: white;
+}
+
+.search_friend_inblock{
+    position: absolute;
+    margin: 30px 80px;
+    width: 450px;
+    height: 30px;
+}
+.search_button_infriends {
+    position: absolute;
+    margin: 29px 550px;
+    width: 38px;
+    height: 33px;
+    font-size: 18px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.friends_list_of_friends{
+    position: relative;
+    margin: 105px 80px;
+    width: 400px;
+    height: 100px;
+    border-radius: 13px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: -70px;
+}
+
+.friends_user_avatar{
+    position: absolute;
+    margin: 5px 20px;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.friends_name{
+    position: absolute;
+    margin: 20px 125px;
+    width: 150px;
+    font-size: 18px;
+    color: black;
+}
+.friends_location{
+    position: absolute;
+    margin: 55px 115px;
+    width: 150px;
+    color: black;
+}
+
+.friends_add_button{
+    position: absolute;
+    margin: 30px 330px;
+    width: 38px;
+    height: 28px;
+    font-size: 18px;
+    background-color: #04AA6D;
+    border-style: none;
+    border-radius: 10px;
+}
+.requesttofriends_infriends{
+    position: absolute;
+    margin: 75px 80px;
+    width: 250px;
+}

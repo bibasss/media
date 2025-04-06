@@ -1,0 +1,17 @@
+a.link{
+    color: black;
+}
+
+.center{
+    position: absolute;
+    margin: 150px 120px;
+}
+.center2{
+    position: absolute;
+    margin: 200px 260px;
+}
+.center3{
+    position: absolute;
+    margin: 200px 400px;
+}
+

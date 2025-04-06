@@ -1,0 +1,12 @@
+.bookmarks_text_noBookmarks{
+    position: absolute;
+    margin: 150px 300px;
+    width: 300px;
+    font-size: 30px;
+
+}
+.bookmarks_ico_noBookmarks{
+    position: absolute;
+    margin: 200px 380px;
+    font-size: 100px;
+}

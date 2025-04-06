@@ -1,0 +1,17 @@
+.chech_profile_posts{
+    position: absolute;
+    margin: 250px 290px;
+    width: 650px;
+    border-radius: 15px;
+    min-height: 500px;
+    height: auto;
+}
+
+
+.chech_profile_message_panel{
+    position: absolute;
+    font-size: 20px;
+    width: 100px;
+    height: 20px;
+    background-color: silver;
+}
