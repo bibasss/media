@@ -16,7 +16,7 @@ export default function CreatePost() {
   const [loading, setLoading] = useState(false);
   const { fetchPost } = UsePostStore();
   // const VITE_API_URL = "https://mern-4-z7n4.onrender.com"
-  const VITE_API_URL= `http://localhost:5555`;
+  const VITE_API_URL= `https://media-vcft.onrender.com`;
 
 
   useEffect(() => {

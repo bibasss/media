@@ -17,7 +17,7 @@ export default function Register(){
   const citiesKazahstan = ["Astana", "Almaty", "Shymkent", "Qaraghandy", "Öskemen", "Aqtöbe", "Taraz", "Semey", "Pavlodar", "Türkistan", "Qyzylorda", "Oral", "Qostanay", "Petropavl", "Temirtaū", "Aqtaū", "Kökshetaū"];
   const [loading, setLoading] = useState(false);
   // const VITE_API_URL = "https://mern-4-z7n4.onrender.com"
-  const VITE_API_URL= `http://localhost:5555`;
+  const VITE_API_URL= `https://media-vcft.onrender.com`;
 
 
   const handleSubmit = async (e: React.FormEvent) => {

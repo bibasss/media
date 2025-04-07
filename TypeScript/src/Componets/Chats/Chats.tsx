@@ -9,16 +9,12 @@ import { formatDate2 } from '../../Algorithm/Algorithm.tsx'
   const navigate = useNavigate();
   const [DataMessages, setDataMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // Новое состояние для загрузки
-  const [userId, setUserId] = useState(null); // Начальное значение null, чтобы избежать раннего рендера
-  const user = JSON.parse(localStorage.getItem("user") as string);
 
 
   useEffect(() => {
     const tokenStatus = checkToken();
     if (!tokenStatus.valid) {
       navigate("/login");
-    } else{
-      setUserId(user.id); // Устанавливаем userId
     }
   }, []);
 

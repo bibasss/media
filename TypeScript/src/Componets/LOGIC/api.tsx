@@ -3,7 +3,7 @@ import { jwtDecode } from "jwt-decode";
 // const VITE_API_URL = "https://mern-4-z7n4.onrender.com"
 // const ws = new WebSocket("wss://mern-4-z7n4.onrender.com");
 
-const VITE_API_URL= `http://localhost:5555`;
+const VITE_API_URL= `https://media-vcft.onrender.com`;
 
 export const checkToken = () => {
   const user = JSON.parse(localStorage.getItem("user") as string);
