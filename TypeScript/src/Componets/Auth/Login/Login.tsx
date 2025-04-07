@@ -45,7 +45,7 @@ export default function Login() {
   };
 
   useEffect(() => {
-    fetch("https://your-backend-url.com/ping")
+    fetch("https://media-vcft.onrender.com/ping")
         .then(() => console.log("Backend wake-up ping sent"))
         .catch((err) => console.error("Backend wake-up failed", err));
   }, []);
