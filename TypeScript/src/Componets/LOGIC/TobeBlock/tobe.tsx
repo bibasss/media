@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import "./tobe.css";
 import toast, { Toaster } from "react-hot-toast";
 import { checkToken } from "../api.tsx";
@@ -7,6 +7,7 @@ import { Switch } from "antd";
 import { BsMoonStars } from "react-icons/bs";
 import { GoSun } from "react-icons/go";
 import { Drawer, Modal } from 'antd';
+import {BiChevronDown} from "react-icons/bi";
 
 
 export default function Tobe() {
@@ -14,7 +15,7 @@ export default function Tobe() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user") as string);
-  const [username, setUsername] = useState("");
+  const [userava, setAva] = useState("");
   const [email, setEmail] = useState("");
   const [requestSent, setRequestSent] = useState(() => {
     return JSON.parse(window.localStorage.getItem("MY_APP_STATE") as string) || false;
@@ -55,7 +56,7 @@ export default function Tobe() {
     if (!tokenStatus.valid) {
       navigate("/login");
     } else {
-      setUsername(user?.email || "Гость");
+      setAva(user?.ava || "Гость");
       setEmail(user.username);
     }
   }, []);
@@ -86,18 +87,17 @@ export default function Tobe() {
 
         {requestSent ? <BsMoonStars className="Moon" /> : <GoSun className="Moon" />}
 
-        <div className="tobe_show_this_username">
-          <button onClick={showDrawer} >{username}</button>
-        </div>
+            <img className="tobe_show_this_username" onClick={showDrawer} src={userava}/>
+            <BiChevronDown onClick={showDrawer} className="tobe_show_this_username_ico"/>
 
         <Drawer title={email} onClose={onClose} open={open}>
-          Notification <br /><br />
-          Setting <br /><br />
+          <Link to={`/balance`}>Notification</Link>  <br /><br />
+          <Link to={`/balance`}>Setting</Link>  <br /><br />
           <Link to={`/balance`}>Balance</Link>   <br /><br />
-          Faq <br /><br />
-          About <br /><br />
-          Help <br /><br />
-          Archive <br /><br /> <br /><br />
+          <Link to={`/balance`}>Faq</Link>  <br /><br />
+          <Link to={`/balance`}>About</Link>  <br /><br />
+          <Link to={`/balance`}>Help</Link>  <br /><br />
+          <Link to={`/balance`}>Archive</Link>  <br /><br /> <br /><br />
           <button className="tobe_logout_button" onClick={showModal}>Logout</button>
         </Drawer>
       </div>

@@ -12,6 +12,7 @@ import Register from './Componets/Auth/Register/Register.tsx'
 import CreatePost from './Componets/LOGIC/CreatePost.tsx'
 import Chat from './Componets/LOGIC/OpenChat/Chat.tsx'
 import CheckProfile from './Componets/LOGIC/CheckProfile/CheckProfile.tsx'
+export const VITE_API_URL = `https://media-vcft.onrender.com`;
 
 const Bookmarks = React.lazy(() => import("./Componets/LOGIC/LeviBlock/LeviBlockComponents/Bookmarks/Bookmarks.tsx"));
 const Balance = React.lazy(() => import("./Componets/LOGIC/TobeBlock/DrawerComponents/Balance/Balance.tsx"));

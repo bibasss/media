@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { checkToken } from "./api.tsx";
 import axios from "axios";
 import { UsePostStore } from '../Store/usePostStore/usePostStore.ts'
-// const VITE_API_URL = "https://mern-4-z7n4.onrender.com"
+import {VITE_API_URL} from "../../App.tsx";
 
 export default function CreatePost() {
   const navigate = useNavigate();
@@ -15,8 +15,7 @@ export default function CreatePost() {
   const [user_ava, setUser_ava] = useState();
   const [loading, setLoading] = useState(false);
   const { fetchPost } = UsePostStore();
-  // const VITE_API_URL = "https://mern-4-z7n4.onrender.com"
-  const VITE_API_URL= `https://media-vcft.onrender.com`;
+
 
 
   useEffect(() => {

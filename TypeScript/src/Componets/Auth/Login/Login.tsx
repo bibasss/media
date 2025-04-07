@@ -3,6 +3,7 @@ import './Login.css'
 import { NavLink, useNavigate } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast';
 import { doLogin } from '../../LOGIC/api.tsx'
+import {VITE_API_URL} from "../../../App.tsx";
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -45,7 +46,7 @@ export default function Login() {
   };
 
   useEffect(() => {
-    fetch("https://media-vcft.onrender.com/ping")
+    fetch(`http://${VITE_API_URL}/ping`)
         .then(() => console.log("Backend wake-up ping sent"))
         .catch((err) => console.error("Backend wake-up failed", err));
   }, []);

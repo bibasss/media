@@ -4,6 +4,7 @@ import { useState } from "react";
 import "./Register.css";
 import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios'
+import {VITE_API_URL} from "../../../App.tsx";
 
 
 export default function Register(){
@@ -16,9 +17,7 @@ export default function Register(){
   const [confirmPassword, setConfirmPassword] = useState('');
   const citiesKazahstan = ["Astana", "Almaty", "Shymkent", "Qaraghandy", "Öskemen", "Aqtöbe", "Taraz", "Semey", "Pavlodar", "Türkistan", "Qyzylorda", "Oral", "Qostanay", "Petropavl", "Temirtaū", "Aqtaū", "Kökshetaū"];
   const [loading, setLoading] = useState(false);
-  // const VITE_API_URL = "https://mern-4-z7n4.onrender.com"
-  const VITE_API_URL= `https://media-vcft.onrender.com`;
-
+  // const VITE_API_URL= `https://media-vcft.onrender.com`;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

@@ -22,10 +22,22 @@ a{
 }
 .tobe_show_this_username{
     position: absolute;
-    margin: 15px 1300px;
-    font-size: 20px;
-    color: black;
+    margin: 2px 1250px;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    overflow: hidden;
+    box-shadow:  rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+.tobe_show_this_username_ico{
+    position: absolute;
+    margin: 8px 1293px;
+    font-size: 35px;
+    color: silver;
+}
+
+
 .tobe_show_this_username button{
     width: 40px;
     height: 20px;
