@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef,useEffect  } from 'react'
 import './Login.css'
 import { NavLink, useNavigate } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast';
@@ -43,6 +43,12 @@ export default function Login() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetch("https://your-backend-url.com/ping")
+        .then(() => console.log("Backend wake-up ping sent"))
+        .catch((err) => console.error("Backend wake-up failed", err));
+  }, []);
 
   return (
     <>
