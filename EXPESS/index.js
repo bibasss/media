@@ -17,7 +17,7 @@ app.use(cors());
 app.use('/api/upload', uploadRouter);
 app.use(
     cors({
-        origin: 'http://localhost:5173',
+        origin: 'https://media-xkxg.vercel.app',
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type'],
     })
@@ -161,6 +161,10 @@ app.get('/posts', async (req, res) => {
         console.error("Error fetching posts:", error);
         res.status(500).json({ message: "Failed to fetch posts" });
     }
+});
+
+app.get('/ping', (req, res) => {
+    res.send('pong');
 });
 
 
