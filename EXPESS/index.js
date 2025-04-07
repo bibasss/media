@@ -17,7 +17,7 @@ app.use(cors());
 app.use('/api/upload', uploadRouter);
 app.use(
     cors({
-        origin: 'https://media-xkxg.vercel.app',
+        origin: 'https://media-ten-gamma.vercel.app',
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type'],
     })
