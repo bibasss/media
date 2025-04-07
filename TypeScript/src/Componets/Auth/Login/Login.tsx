@@ -80,7 +80,7 @@ export default function Login() {
 
       <div className="neveruse">
         <h4>About this project:</h4>
-        Used: Node js: Express, React(TSX), Mongodb, Git, Jest, Zustand, Redis, Cloudinary
+        Used: Node js: Express, React(TSX), Mongodb, Git, Jest, Zustand, Redis, Cloudinary)
         <br /><br />
         Front have: Antd, react-icons, react-router-dom, react-hot-toast, socket.io, jwt, axios, react-modal-image,
         dynamic import, useMemo
