@@ -71,7 +71,7 @@ export default function Register(){
         </div>
 
         <div className="form-field col-lg-6">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Username</label>
           <input name="email" id="email" className="form-control" type="text" value={email}
                  onChange={(e) => setEmail(e.target.value)}/>
         </div>

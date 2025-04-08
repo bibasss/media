@@ -5,9 +5,6 @@ import { useNavigate, useParams, NavLink} from 'react-router-dom';
 import { formatDate2 } from '../../../Algorithm/Algorithm'
 import { HiChevronLeft } from "react-icons/hi2";
 import { BiSend } from "react-icons/bi";
-import {VITE_API_URL} from "../../../App.tsx";
-
-// const ws = new WebSocket("wss://mern-4-z7n4.onrender.com");
 
 export default function Chat() {
   const user = JSON.parse(localStorage.getItem("user") as string);
@@ -65,7 +62,8 @@ export default function Chat() {
   useEffect(() => {
     if (!sender_id) return;
 
-    const ws = new WebSocket(`ws://${VITE_API_URL}`);
+    // const ws = new WebSocket("ws://localhost:5555");
+    const ws = new WebSocket("wss://media-vcft.onrender.com");
 
     ws.onopen = () => {
       console.log("Connected to WebSocket");

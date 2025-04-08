@@ -59,7 +59,7 @@ export default function Login() {
         <form onSubmit={handleSubmit}>
           <input
             className="Email"
-            placeholder=" Email"
+            placeholder=" Username"
             type="text"
             id="email"
             name="email"
