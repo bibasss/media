@@ -17,7 +17,7 @@ app.use(cors());
 app.use('/api/upload', uploadRouter);
 app.use(
     cors({
-        origin: 'https://media-ten-gamma.vercel.app',
+        origin: 'https://media-front-sandy.vercel.app',
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type'],
     })
@@ -239,3 +239,16 @@ mongoose
     .catch((error) => {
         console.log("MongoDB connection error:", error);
     });
+
+
+
+/*
+тая  15 500
+алиш
+ангелина
+мира
+стажер 1500
+техничка
+мен
+повар
+ */
