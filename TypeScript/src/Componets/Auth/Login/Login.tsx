@@ -46,7 +46,7 @@ export default function Login() {
   };
 
   useEffect(() => {
-    fetch(`http://${VITE_API_URL}/ping`)
+    fetch(`${VITE_API_URL}/ping`)
         .then(() => console.log("Backend wake-up ping sent"))
         .catch((err) => console.error("Backend wake-up failed", err));
   }, []);
