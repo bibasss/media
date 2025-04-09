@@ -1,10 +1,8 @@
-import { useState, useRef,useEffect  } from 'react'
+import { useState, useRef  } from 'react'
 import './Login.css'
 import { NavLink, useNavigate } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast';
 import { doLogin } from '../../LOGIC/api.tsx'
-import {VITE_API_URL} from "../../../App.tsx";
-import axios from "axios";
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -12,7 +10,6 @@ export default function Login() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const successToastShown = useRef(false);
-  const some_text = "5";
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
