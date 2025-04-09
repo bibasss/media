@@ -1,0 +1,62 @@
+.edit_profile_fisrt{
+    position: absolute;
+    margin: 80px 290px;
+    width: 750px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow:  rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: white;
+}
+
+.edit_profile_edit_ava{
+    position: absolute;
+    margin: 10px 50px;
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    overflow: hidden;
+    box-shadow:  rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.edit_profile_edit_name{
+    position: absolute;
+    margin: 20px 200px;
+    font-size: 20px;
+    width: 240px;
+    height: 33px;
+}
+
+.edit_profile_edit_textAboutMe{
+    position: absolute;
+    margin: 65px 200px;
+    font-size: 15px;
+    width: 240px;
+    height: 25px;
+}
+
+.edit_profile_edit_city{
+    position: absolute;
+    margin: 105px 200px;
+    font-size: 15px;
+    width: 240px;
+    height: 25px;
+}
+
+
+
+
+.edit_profile_edit_password{
+    position: absolute;
+    margin: 145px 200px;
+    font-size: 15px;
+    width: 150px;
+    height: 28px;
+}
+.edit_profile_edit_password_again{
+    position: absolute;
+    margin: 65px 190px;
+    font-size: 15px;
+    width: 200px;
+    height: 25px;
+}
+

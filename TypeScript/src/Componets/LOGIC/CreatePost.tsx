@@ -4,6 +4,7 @@ import { checkToken } from "./api.tsx";
 import axios from "axios";
 import { UsePostStore } from '../Store/usePostStore/usePostStore.ts'
 import {VITE_API_URL} from "../../App.tsx";
+import { UploadOutlined } from '@ant-design/icons';
 
 export default function CreatePost() {
   const navigate = useNavigate();
@@ -82,7 +83,11 @@ export default function CreatePost() {
 
         <label>
           Upload Image:
-          <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files?.[0] || null)} />
+          <UploadOutlined />
+          <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files?.[0] || null)}>
+          </input>
+
+
         </label>
 
         <br /> <br />

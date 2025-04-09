@@ -17,8 +17,8 @@
     object-fit: cover;
     overflow: hidden;
     box-shadow:  rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
 }
+
 .profile_user_edit_profile{
     position: absolute;
     margin: 28px 640px;
@@ -191,4 +191,16 @@
     position: absolute;
     margin: 10px 550px;
     font-size: 28px;
+}
+.profile_postPlace_whenNoPostIco{
+    position: absolute;
+    font-size: 130px;
+    margin: 120px 250px;
+}
+.profile_postPlace_whenNoPostText{
+    position: absolute;
+    margin: 270px 190px;
+    font-size: 24px;
+    width: 400px;
+
 }

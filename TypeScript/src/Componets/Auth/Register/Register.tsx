@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./Register.css";
 import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios'
-import {VITE_API_URL} from "../../../App.tsx";
+import {VITE_API_URL, citiesKazahstan} from "../../../App.tsx";
 
 
 export default function Register(){
@@ -15,7 +15,6 @@ export default function Register(){
   const [image, setImage] = useState<File | null>(null);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const citiesKazahstan = ["Astana", "Almaty", "Shymkent", "Qaraghandy", "Öskemen", "Aqtöbe", "Taraz", "Semey", "Pavlodar", "Türkistan", "Qyzylorda", "Oral", "Qostanay", "Petropavl", "Temirtaū", "Aqtaū", "Kökshetaū"];
   const [loading, setLoading] = useState(false);
   // const VITE_API_URL= `https://media-vcft.onrender.com`;
 

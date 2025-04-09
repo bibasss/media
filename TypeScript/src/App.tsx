@@ -12,7 +12,10 @@ import Register from './Componets/Auth/Register/Register.tsx'
 import CreatePost from './Componets/LOGIC/CreatePost.tsx'
 import Chat from './Componets/LOGIC/OpenChat/Chat.tsx'
 import CheckProfile from './Componets/LOGIC/CheckProfile/CheckProfile.tsx'
+import EditProfile from "./Componets/Profile/EditProfile.tsx";
 export const VITE_API_URL = `https://media-vcft.onrender.com`;
+export const citiesKazahstan = ["Astana", "Almaty", "Shymkent", "Qaraghandy", "Öskemen", "Aqtöbe", "Taraz", "Semey", "Pavlodar", "Türkistan", "Qyzylorda", "Oral", "Qostanay", "Petropavl", "Temirtaū", "Aqtaū", "Kökshetaū"];
+
 // delete my project
 //bibasss-projects/media-akxg
 const Bookmarks = React.lazy(() => import("./Componets/LOGIC/LeviBlock/LeviBlockComponents/Bookmarks/Bookmarks.tsx"));
@@ -67,6 +70,14 @@ export default function App() {
         <ProtectedLayout>
             <CheckProfile />
         </ProtectedLayout>
+      ),
+    },
+    {
+      path: "/edit_profile/:id",
+      element: (
+          <ProtectedLayout>
+            <EditProfile />
+          </ProtectedLayout>
       ),
     },
     {

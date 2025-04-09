@@ -8,92 +8,9 @@
     background-color: white;
 }
 
-.profile_levi{
-    position: absolute;
-    margin: 30px 60px;
-    font-size: 20px;
+.LeviBlock_ItemesSIze{
+    font-size: 18px;
 }
-
-
-.Home_levi{
-    position: absolute;
-    margin: 65px 60px;
-    font-size: 20px;
-}
-
-.Friends_levi{
-    position: absolute;
-    margin: 105px 60px;
-    font-size: 20px;
-}
-
-.Chat_levi{
-    position: absolute;
-    margin: 140px 60px;
-    font-size: 20px;
-}
-.Album-levi{
-    position: absolute;
-    margin: 175px 60px;
-    font-size: 20px;
-}
-.Video_levi{
-    position: absolute;
-    margin: 210px 60px;
-    font-size: 20px;
-}
-.Music_levi{
-    position: absolute;
-    margin: 245px 60px;
-    font-size: 20px;
-}
-.Book-levi{
-    position: absolute;
-    margin: 280px 60px;
-    font-size: 20px;
-}
-
-
-
-.profile_profile_ico{
-    position: absolute;
-    margin: 28px 25px;
-    font-size: 25px;
-}
-.profile_posts_ico{
-    position: absolute;
-    margin: 64px 25px;
-    font-size: 25px;
-}
-.profile_friends_ico{
-    position: absolute;
-    margin: 100px 25px;
-    font-size: 25px;
-}
-
-.profile_chat_ico{
-    position: absolute;
-    margin: 136px 25px;
-    font-size: 25px;
-}
-.profile_image_ico{
-    position: absolute;
-    margin: 172px 25px;
-    font-size: 25px;
-}
-.profile_vieos_ico{
-    position: absolute;
-    margin: 208px 25px;
-    font-size: 25px;
-}
-.profile_music_ico{
-    position: absolute;
-    margin: 244px 25px;
-    font-size: 25px;
-}
-
-.profile_bookmarks_ico{
-    position: absolute;
-    margin: 280px 25px;
-    font-size: 25px;
+.LeviBlock_ItemesSIze a{
+    font-size: 18px;
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Profile.css'
 import { checkToken } from '../LOGIC/api.tsx'
-import { useNavigate, Link, NavLink } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { formatDate2 } from '../../Algorithm/Algorithm.tsx'
 import { IoAddOutline } from "react-icons/io5";
 import { CiEdit } from "react-icons/ci";
@@ -11,11 +11,13 @@ import type { MenuProps } from 'antd';
 import { Dropdown } from 'antd';
 import { UsePostStore } from '../Store/usePostStore/usePostStore.ts'
 import { useUserStore } from '../Store/useUserStore/useUserStore.ts'
+import { FiInbox } from "react-icons/fi";
 
 function Profile() {
   const { posts, isLoading, fetchPost } = UsePostStore();
   const { users, isLoading2, fetchUsers } = useUserStore();
   const [userName, setUsername] = useState(null)
+  const [text_about_user, setUserAboutText] = useState(null)
   const [userAva, setUserAva] = useState("https://res.cloudinary.com/dm7cuhmda/image/upload/v1743782772/posts/iisbjwprc8uiajw2gvcv.jpg")
   const navigate = useNavigate();
   const [id, setId] = useState('')
@@ -23,33 +25,33 @@ function Profile() {
     {
       key: '1',
       label: (
-          <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+          <Link to={'/profile'}>
             Safety
-          </a>
+          </Link>
       ),
     },
     {
       key: '2',
       label: (
-          <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+          <Link to={'/profile'}>
             Privacy
-          </a>
+          </Link>
       ),
     },
     {
       key: '3',
       label: (
-          <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+          <Link to={'/profile'}>
             Notification
-          </a>
+          </Link>
       ),
     },
     {
       key: '4',
       label: (
-          <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+          <Link to={'/profile'}>
             Action
-          </a>
+          </Link>
       ),
     },
   ];
@@ -64,6 +66,7 @@ function Profile() {
       setUsername(user.username);
       setUserAva(user.ava);
       setId(user.id);
+      setUserAboutText(user.text_about_user);
     }
   }, []);
 
@@ -90,10 +93,10 @@ function Profile() {
               className="profile_user_ava"
           />
           <div className="profile_user_name">{userName}</div>
-          <div className="profile_user_about">nothing</div>
-          <NavLink className="profile_user_edit_profile" to={"#"}>
+          <div className="profile_user_about">{text_about_user || "Nothing"}</div>
+          <Link className="profile_user_edit_profile" to = {`/edit_profile/${id}`}>
             <div className="profile_user_edit_profile_tetx"> Edit Profile </div>
-          </NavLink>
+          </Link>
 
           <Dropdown menu={{ items }}>
             <div className="profile_user_more">
@@ -160,9 +163,14 @@ function Profile() {
                         (posts.user_id === id) )
                     .length === 0 ? (
                     <div className="Profile_user_posts">
-                      <div className="">no_post</div>
+                      <div className="profile_postPlace_whenNoPostText">
+                        There is no post, create it!
+                      </div>
+                      <div className="profile_postPlace_whenNoPostIco">
+                        <FiInbox/>
+                      </div>
                     </div>
-                ) : ( posts
+                ) : (posts
                     .filter(posts => posts.user_id === id)
                     .map((posts) => (
 

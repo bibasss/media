@@ -1,67 +1,42 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import "./leviblock.css";
 import { CgProfile } from "react-icons/cg";
 import { BiDockTop } from "react-icons/bi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import { FaRegImage, FaPhotoVideo, FaUserFriends} from "react-icons/fa";
-import { MdOutlineLibraryMusic, MdOutlineBookmarks} from "react-icons/md";
+import { FaRegImage, FaPhotoVideo, FaUserFriends } from "react-icons/fa";
+import { MdOutlineLibraryMusic, MdOutlineBookmarks } from "react-icons/md";
+import type { GetProp, MenuProps } from 'antd';
+import { Menu } from 'antd';
+import { ReactNode } from 'react';
 
+type MenuItem = GetProp<MenuProps, 'items'>[number];
 
-export default function LeviBlock () {
+const menuLinks: { key: string, label: string, path: string, icon: ReactNode }[] = [
+  { key: 'profile', label: 'Profile', path: '/profile', icon: <CgProfile /> },
+  { key: 'posts', label: 'Posts', path: '/', icon: <BiDockTop /> },
+  { key: 'friends', label: 'Users', path: '/friends', icon: <FaUserFriends /> },
+  { key: 'chats', label: 'Chat', path: '/chats', icon: <IoChatbubbleEllipsesOutline /> },
+  { key: 'album', label: 'Album', path: '/Music', icon: <FaRegImage /> },
+  { key: 'video', label: 'Video', path: '/Music', icon: <FaPhotoVideo /> },
+  { key: 'music', label: 'Music', path: '/Music', icon: <MdOutlineLibraryMusic /> },
+  { key: 'bookmarks', label: 'Bookmarks', path: '/bookmarks', icon: <MdOutlineBookmarks /> }
+];
 
+export default function LeviBlock() {
+  const items: MenuItem[] = menuLinks.map(link => ({
+    key: link.key,
+    label: <NavLink to={link.path}>{link.label}</NavLink>,
+    icon: <div className = "LeviBlock_ItemesSIze">{link.icon}</div>
+  }));
 
   return (
-    <>
       <div className="LeviBlock">
-
-        <div className="profile_profile_ico"><CgProfile /></div>
-        <div className="profile_levi">
-          <NavLink to={"/profile"}>Profile</NavLink>
-        </div>
-
-        <div className="profile_posts_ico"><BiDockTop /></div>
-        <div className="Home_levi">
-          <NavLink to={"/"}>Posts</NavLink>
-        </div>
-
-        <div className="profile_friends_ico"><FaUserFriends /></div>
-        <div className="Friends_levi">
-          <NavLink to={"/friends"}>Users</NavLink>
-        </div>
-
-        <div className="profile_chat_ico"><IoChatbubbleEllipsesOutline /></div>
-        <div className="Chat_levi">
-          <NavLink to={"/chats"}>Chat</NavLink>
-        </div>
-
-        <div className="profile_image_ico"><FaRegImage /></div>
-        <div className="Album-levi">
-          <NavLink to={"/"}>Album</NavLink>
-        </div>
-
-        <div className="profile_vieos_ico"><FaPhotoVideo /></div>
-        <div className="Video_levi">
-          <NavLink to={"/"}>Video</NavLink>
-        </div>
-
-        <div className="profile_music_ico"><MdOutlineLibraryMusic /></div>
-        <div className="Music_levi">
-          <NavLink to={"/Music"}>Music</NavLink>
-        </div>
-
-        <div className="profile_bookmarks_ico"><MdOutlineBookmarks /></div>
-        <div className="Book-levi">
-          <NavLink to={"/bookmarks"}>Bookmarks</NavLink>
-        </div>
-
-        <div className="profile_bookmarks_ico"></div>
-        <div className="Book-levi">
-          <NavLink to={"/"}></NavLink>
-        </div>
-
-
+        <Menu
+            className = "LeviBlock_ItemesSIze"
+            style={{ width: 170}}
+            mode="vertical"
+            items={items}
+        />
       </div>
-    </>
-  )
+  );
 }
-

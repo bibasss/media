@@ -98,7 +98,8 @@
 .message_interface_message2{
     position: relative;
     width: 550px;
-    height: 100px;
+    min-height: 100px;
+    max-height: 500px;
     margin-top: -15px;
 }
 
