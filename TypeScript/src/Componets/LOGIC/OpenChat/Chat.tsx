@@ -62,7 +62,7 @@ export default function Chat() {
   useEffect(() => {
     if (!sender_id) return;
 
-    const ws = new WebSocket("ws://media-vcft.onrender.com");
+    const ws = new WebSocket("wss://media-vcft.onrender.com");
 
     ws.onopen = () => {
       console.log("Connected to WebSocket");
