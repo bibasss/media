@@ -24,6 +24,7 @@ export default function EditProfile() {
     return (
         <div className="edit_profile_fisrt">
             <Segmented
+                className="dark-mode_background"
                 options={['Profile custom', 'Safety']}
                 block
                 value={section}

@@ -64,6 +64,11 @@ a{
 .dark-mode .friend-item{
     background-color: #282828;
 }
+
+
+.dark-mode .chats_maincontent,
+.dark-mode .dark-mode_background,
+.dark-mode .edit_profile_fisrt,
 .dark-mode .LeviBlock_ItemesSIze,
 .dark-mode .profil_friends_block,
 .dark-mode .profile_createpost_block,
@@ -89,14 +94,24 @@ a{
 .dark-mode .Moon{
     color: white;
 }
+.dark-mode .profile_user_more,
+.dark-mode .profile_user_edit_profile{
+    background-color: white;
+}
 
-
-.dark-mode
-.dark-mode
 .dark-mode .profile_user_edit_profile_tetx,
+.dark-mode .profile_user_more_ico{
+    color: black;
+}
+
+
+.dark-mode ,
+.dark-mode .ne_xoty_pridymat,
+.dark-mode .requesttofriends_infriends,
+.dark-mode .profile_post_editing,
+.dark-mode .profile_createpost_block_text,
 .dark-mode .dakr_mode,
 .dark-mode .profile_createpost_block_ico_add,
-.dark-mode .profile_createpost_block_text,
 .dark-mode .LeviBlock_ItemesSIze,
 .dark-mode .LeviBlock_ItemesSIze a,
 .dark-mode .message_interface_item3,
