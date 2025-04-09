@@ -62,7 +62,7 @@ export default function Chat() {
   useEffect(() => {
     if (!sender_id) return;
 
-    const ws = new WebSocket("wss://media-vcft.onrender.com");
+    const ws = new WebSocket("ws://media-vcft.onrender.com");
 
     ws.onopen = () => {
       console.log("Connected to WebSocket");
@@ -86,6 +86,10 @@ export default function Chat() {
 
   const sendMessage = () => {
     if (!messageText.trim() || !socket) return;
+
+    // if (messageText.length > 50){
+    //   window.location.reload();
+    // }
 
     const messageData = {
       type: "message",
@@ -140,7 +144,7 @@ export default function Chat() {
                   (messages.sender_id === sender_id && messages.getter_id === getter_id) ||
                   (messages.sender_id === getter_id && messages.getter_id === sender_id)
                 )
-                .length === 0 && messages.length ===0 ? (
+                .length === 0 && messages.length === 0? (
                 <div className="no_message">No message</div>
               ) : (
                 DataMessages
