@@ -64,6 +64,7 @@ a{
 .dark-mode .friend-item{
     background-color: #282828;
 }
+.dark-mode .LeviBlock_ItemesSIze,
 .dark-mode .profil_friends_block,
 .dark-mode .profile_createpost_block,
 .dark-mode .message_user_interface,
@@ -76,11 +77,7 @@ a{
 .dark-mode .priends_maincontent {
     background-color: #282828;
 }
-.dark-mode a{
-    color: white;
-    text-decoration: none;
-    background-color: #282828;
-}
+
 .dark-mode button {
     background-color: white; /* Green */
     border: none;
@@ -92,6 +89,16 @@ a{
 .dark-mode .Moon{
     color: white;
 }
+
+
+.dark-mode
+.dark-mode
+.dark-mode .profile_user_edit_profile_tetx,
+.dark-mode .dakr_mode,
+.dark-mode .profile_createpost_block_ico_add,
+.dark-mode .profile_createpost_block_text,
+.dark-mode .LeviBlock_ItemesSIze,
+.dark-mode .LeviBlock_ItemesSIze a,
 .dark-mode .message_interface_item3,
 .dark-mode .message_interface_item2,
 .dark-mode .profile_post_name,

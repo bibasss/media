@@ -100,12 +100,13 @@ function Profile() {
 
           <Dropdown menu={{ items }}>
             <div className="profile_user_more">
-              <div className="profile_user_more_text">
-                <a onClick={(e) => e.preventDefault()}>
+              <a onClick={(e) => e.preventDefault()}>
+                <div className="profile_user_more_text">
                   More
-                </a>
-              </div>
-              <div className="profile_user_more_ico"><BiChevronDown /></div>
+                </div>
+
+              </a>
+            <div className="profile_user_more_ico"><BiChevronDown /></div>
             </div>
           </Dropdown>
         </div>
@@ -139,7 +140,7 @@ function Profile() {
                           <div key={users._id} className="friend-item">
                             <Link to={`/check_profile/${users._id}`}>
                               <img className="profil_friends_block_ava" src={users.ava} />
-                              <div className="">{users.username}</div>
+                              <div className="dakr_mode">{users.username}</div>
                             </Link>
                           </div>
                       ))
