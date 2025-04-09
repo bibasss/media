@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: your-app-name
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    routes:
+      - src: /.*
+        dest: /index.html
