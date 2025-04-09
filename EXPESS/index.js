@@ -8,6 +8,7 @@ import { Message } from './models/Message.js';
 import jwt from 'jsonwebtoken';
 import { WebSocketServer } from 'ws';
 import uploadRouter from './routes/upload.js';
+import {WakeUp} from "./models/WakeUp.js";
 
 const secretKey = "Argynbek-aqai-is-best-teacher";
 
@@ -17,8 +18,7 @@ app.use(cors());
 app.use('/api/upload', uploadRouter);
 app.use(
     cors({
-        // origin: 'https://media-front-sandy.vercel.app',
-        origin: 'https://media-eta-orpin.vercel.app',
+        origin: 'https://media-zdhz.vercel.app',
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type'],
     })
@@ -38,13 +38,29 @@ function authenticateToken(req, res, next) {
     });
 }
 
+app.post('/wake_up', async (request, response) => {
+    try {
+        const { email } = request.body;
+
+        const newUser = new WakeUp({
+            email,
+            createdAt: new Date(),
+        });
+
+        const savedWakeUp = await newUser.save();
+        return response.status(201).send(savedWakeUp);
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
+    }
+});
 
 app.post('/login', async (req, res) => {
     const reqUser = req.body
     const user = await User.findOne({ email: reqUser.email, password: reqUser.password });
 
     if(user){
-        const token = jwt.sign({userId: user._id, email: user.email, role: user.role, city: user.city, ava: user.ava}, secretKey, {expiresIn: 3600});
+        const token = jwt.sign({userId: user._id, email: user.email, role: user.role, city: user.city, ava: user.ava, text_about_user:user.text_about_user}, secretKey, {expiresIn: 3600});
         res.json({
             id: user._id,
             username: user.username,
@@ -52,7 +68,8 @@ app.post('/login', async (req, res) => {
             role: user.role,
             token: token,
             city: user.city,
-            ava: user.ava
+            ava: user.ava,
+            text_about_user: user.text_about_user
         });}else{
         res.status(401).json({message: "Wrong username or password!"});
     }
@@ -83,7 +100,8 @@ app.post('/register', async (request, response) => {
             password,
             city,
             ava: imageUrl,
-            role: "user"
+            role: "user",
+            text_about_user: `Hi! me name is ${name}`
         });
 
         const savedUser = await newUser.save();
@@ -163,11 +181,6 @@ app.get('/posts', async (req, res) => {
         res.status(500).json({ message: "Failed to fetch posts" });
     }
 });
-
-app.get('/ping', (req, res) => {
-    res.send('pong');
-});
-
 
 app.get("/posts", async (req, res) => {
     try {

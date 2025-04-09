@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
   password: String,
   city: String,
   ava: String,
-  role: String
+  role: String,
+  text_about_user: String,
 });
 
 export const User = mongoose.model('User', userSchema);
