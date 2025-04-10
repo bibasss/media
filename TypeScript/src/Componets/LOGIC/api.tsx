@@ -100,7 +100,7 @@ export const RequestToFriends = async (user_id: String, UserLocation: String, us
     const token = user.token;
 
     await axios.post(
-      'http://localhost:5555/request_to_friends',
+      `${VITE_API_URL}/request_to_friends`,
       {
         user_id,
         UserLocation,
@@ -128,7 +128,7 @@ export const CheckFriendRequest = async (user_id: String, sender_id: String) => 
     const token = user.token;
 
     const response = await axios.get(
-      `http://localhost:5555/check_friend_request?user_id=${user_id}&sender_id=${sender_id}`,
+      `${VITE_API_URL}/check_friend_request?user_id=${user_id}&sender_id=${sender_id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -150,7 +150,7 @@ export const CancelFriendRequest = async (user_id: String, sender_id: String) =>
     const token = user.token;
 
     await axios.delete(
-      `http://localhost:5555/cancel_friend_request?user_id=${user_id}&sender_id=${sender_id}`,
+      `${VITE_API_URL}/cancel_friend_request?user_id=${user_id}&sender_id=${sender_id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`

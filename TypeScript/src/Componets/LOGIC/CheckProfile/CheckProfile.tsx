@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { checkToken, getAllPosts, RequestToFriends, CheckFriendRequest, CancelFriendRequest  } from '../api.tsx'
 import { useNavigate, Link,useParams  } from 'react-router-dom'
 import { formatDate2 } from '../../../Algorithm/Algorithm.tsx'
@@ -7,6 +7,7 @@ import './CheckProfile.css'
 import { useUserStore } from '../../Store/useUserStore/useUserStore.ts'
 import {Button, Modal} from 'antd';
 import toast, { Toaster } from 'react-hot-toast';
+import {FiInbox} from "react-icons/fi";
 
 export default function CheckProfile() {
   const navigate = useNavigate();
@@ -143,16 +144,23 @@ export default function CheckProfile() {
               .filter(posts =>
                 (posts.user_id === id) )
               .length === 0 ? (
-                <div className=""></div>
-            ) : ( posts
-            .filter(posts => posts.user_id === id)
-            .map((posts) => (
+                <div className="Profile_user_posts">
+                  <div className="profile_postPlace_whenNoPostText">
+                    There is no post!
+                  </div>
+                  <div className="profile_postPlace_whenNoPostIco">
+                    <FiInbox/>
+                  </div>
+                </div>
+            ) : (posts
+                .filter(posts => posts.user_id === id)
+                .map((posts) => (
 
-              <div key={posts._id} className="Profile_user_posts">
+                    <div key={posts._id} className="Profile_user_posts">
 
-                <img className="profile_post_ava" src={posts.user_ava} />
-                <div className="profile_post_name">{posts.username}</div>
-                <div className="profile_post_time"> {formatDate2(posts.createdAt)}</div>
+                      <img className="profile_post_ava" src={posts.user_ava}/>
+                      <div className="profile_post_name">{posts.username}</div>
+                      <div className="profile_post_time"> {formatDate2(posts.createdAt)}</div>
                 <img className="profile_post_image" src={posts.img_src} /><br />
               </div>
             ))))}
