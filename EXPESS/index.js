@@ -9,6 +9,7 @@ import jwt from 'jsonwebtoken';
 import { WebSocketServer } from 'ws';
 import uploadRouter from './routes/upload.js';
 import {WakeUp} from "./models/WakeUp.js";
+import {RequestToFriends} from './models/RequestToFriends.js'
 
 const secretKey = "Argynbek-aqai-is-best-teacher";
 
@@ -195,6 +196,79 @@ app.get("/posts", async (req, res) => {
 });
 
 
+app.post('/request_to_friends', authenticateToken, async (request, response) => {
+    try {
+        const {user_id,UserLocation,userAva,userName,sender_id } = request.body;
+
+        if (!user_id || !userName || !user_id) {
+            return response.status(400).send({ message: 'Send all required fields!' });
+        }
+
+        const NewRequest = new RequestToFriends({
+            user_id,
+            UserLocation,
+            userAva,
+            userName,
+            sender_id,
+            createdAt: new Date(),
+        });
+
+        const savedPost = await NewRequest.save();
+        return response.status(201).send(savedPost);
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
+    }
+});
+
+app.delete('/request_to_friends/:id', async (request, response) => {
+    try {
+        const { id } = request.params;
+
+        const result = await RequestToFriends.findByIdAndDelete(id);
+
+        if (!result) {
+            return response.status(404).json({ message: 'Post not found' });
+        }
+
+        return response.status(200).send({ message: 'Post deleted successfully' });
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
+    }
+})
+
+
+
+
+
+app.get('/check_friend_request', authenticateToken, async (req, res) => {
+    try {
+        const { user_id, sender_id } = req.query;
+
+        const existingRequest = await RequestToFriends.findOne({ user_id, sender_id });
+
+        res.json({ exists: !!existingRequest });
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send({ message: error.message });
+    }
+});
+
+
+
+app.delete('/cancel_friend_request', authenticateToken, async (req, res) => {
+    try {
+        const { user_id, sender_id } = req.query;
+
+        await RequestToFriends.deleteOne({ user_id, sender_id });
+
+        res.json({ success: true });
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send({ message: error.message });
+    }
+});
 
 mongoose
     .connect(mongoDBURL)
@@ -255,14 +329,3 @@ mongoose
     });
 
 
-
-/*
-тая  15 500
-алиш
-ангелина
-мира
-стажер 1500
-техничка
-мен
-повар
- */
