@@ -63,6 +63,7 @@ export default function Chat() {
     if (!sender_id) return;
 
     const ws = new WebSocket("wss://media-vcft.onrender.com");
+    ///    const ws = new WebSocket("wss://media-vcft.onrender.com");
 
     ws.onopen = () => {
       console.log("Connected to WebSocket");

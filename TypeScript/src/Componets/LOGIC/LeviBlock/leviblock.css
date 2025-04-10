@@ -2,15 +2,20 @@
     position: absolute;
     margin: 80px 100px;
     width: 170px;
-    height: 400px;
+    height: 350px;
     box-shadow:  rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 15px;
 }
 
 .LeviBlock_ItemesSIze{
-    font-size: 18px;
+    font-size: 20px;
     color: black;
 }
+.LeviBlock_ItemesSIzeIco{
+    font-size: 20px;
+    color: black;
+}
+
 .LeviBlock_ItemesSIze a{
     font-size: 18px;
     color: black;

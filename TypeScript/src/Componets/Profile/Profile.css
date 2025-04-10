@@ -61,6 +61,11 @@
     margin: 50px 190px;
     font-size: 16px;
 }
+.profile_user_addToFriends{
+    position: absolute;
+    margin: 50px 290px;
+    font-size: 14px;
+}
 
 .profile_createpost_block{
     position: absolute;

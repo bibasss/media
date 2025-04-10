@@ -3,7 +3,7 @@ import "./leviblock.css";
 import { CgProfile } from "react-icons/cg";
 import { BiDockTop } from "react-icons/bi";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import { FaRegImage, FaPhotoVideo, FaUserFriends } from "react-icons/fa";
+import { FaPhotoVideo, FaUserFriends } from "react-icons/fa";
 import { MdOutlineLibraryMusic, MdOutlineBookmarks } from "react-icons/md";
 import type { GetProp, MenuProps } from 'antd';
 import { Menu } from 'antd';
@@ -16,7 +16,6 @@ const menuLinks: { key: string, label: string, path: string, icon: ReactNode }[]
   { key: 'posts', label: 'Posts', path: '/', icon: <BiDockTop className="LeviBlock_ItemesSIze" /> },
   { key: 'friends', label: 'Users', path: '/friends', icon: <FaUserFriends className="LeviBlock_ItemesSIze" /> },
   { key: 'chats', label: 'Chat', path: '/chats', icon: <IoChatbubbleEllipsesOutline className="LeviBlock_ItemesSIze" /> },
-  { key: 'album', label: 'Album', path: '/Music', icon: <FaRegImage className="LeviBlock_ItemesSIze" /> },
   { key: 'video', label: 'Video', path: '/Music', icon: <FaPhotoVideo className="LeviBlock_ItemesSIze" /> },
   { key: 'music', label: 'Music', path: '/Music', icon: <MdOutlineLibraryMusic className="LeviBlock_ItemesSIze" /> },
   { key: 'bookmarks', label: 'Bookmarks', path: '/bookmarks', icon: <MdOutlineBookmarks className="LeviBlock_ItemesSIze" /> }
@@ -32,9 +31,11 @@ export default function LeviBlock() {
   return (
       <div className="LeviBlock">
         <Menu
+            theme='light'
+            defaultOpenKeys={['sub1']}
             className = "LeviBlock_ItemesSIze"
             style={{ width: 170 }}
-            mode="vertical"
+            mode="inline"
             items={items}
         />
       </div>

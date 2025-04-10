@@ -15,3 +15,13 @@
     height: 20px;
     background-color: silver;
 }
+
+.checkProfile_info_about_user{
+    position: absolute;
+    margin: 80px 290px;
+    width: 615px;
+    height: 140px;
+    border-radius: 15px;
+    box-shadow:  rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: white;
+}

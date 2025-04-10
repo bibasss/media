@@ -94,74 +94,73 @@ export const getAllPosts = async () => {
   }
 }
 
+export const RequestToFriends = async (user_id: String, UserLocation: String, userAva: String, userName: String, sender_id: String) => {
+  try {
+    const user = JSON.parse(localStorage.getItem("user") as string);
+    const token = user.token;
 
-// export const RequestToFriends = async (user_id, UserLocation, userAva, userName, sender_id) => {
-//   try {
-//     const user = JSON.parse(localStorage.getItem("user"));
-//     const token = user.token;
-//
-//     await axios.post(
-//       'http://localhost:5555/request_to_friends',
-//       {
-//         user_id,
-//         UserLocation,
-//         userAva,
-//         userName,
-//         sender_id
-//       },
-//       {
-//         headers: {
-//           Authorization: `Bearer ${token}`
-//         }
-//       }
-//     );
-//
-//     return { success: true };
-//   } catch (error) {
-//     console.error('Registration error: ' + error);
-//     return { success: false };
-//   }
-// };
+    await axios.post(
+      'http://localhost:5555/request_to_friends',
+      {
+        user_id,
+        UserLocation,
+        userAva,
+        userName,
+        sender_id
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
 
-// export const CheckFriendRequest = async (user_id, sender_id) => {
-//   try {
-//     const user = JSON.parse(localStorage.getItem("user"));
-//     const token = user.token;
-//
-//     const response = await axios.get(
-//       `http://localhost:5555/check_friend_request?user_id=${user_id}&sender_id=${sender_id}`,
-//       {
-//         headers: {
-//           Authorization: `Bearer ${token}`
-//         }
-//       }
-//     );
-//
-//     return response.data.exists; // true или false
-//   } catch (error) {
-//     console.error("Ошибка при проверке запроса:", error);
-//     return false;
-//   }
-// };
-//
-//
-// export const CancelFriendRequest = async (user_id, sender_id) => {
-//   try {
-//     const user = JSON.parse(localStorage.getItem("user"));
-//     const token = user.token;
-//
-//     await axios.delete(
-//       `http://localhost:5555/cancel_friend_request?user_id=${user_id}&sender_id=${sender_id}`,
-//       {
-//         headers: {
-//           Authorization: `Bearer ${token}`
-//         }
-//       }
-//     );
-//
-//     return { success: true };
-//   } catch (error) {
-//     console.error("Ошибка при отмене запроса:", error);
-//     return { success: false };
-//   }
-// };
+    return { success: true };
+  } catch (error) {
+    console.error('Registration error: ' + error);
+    return { success: false };
+  }
+};
+
+export const CheckFriendRequest = async (user_id: String, sender_id: String) => {
+  try {
+    const user = JSON.parse(localStorage.getItem("user") as string);
+    const token = user.token;
+
+    const response = await axios.get(
+      `http://localhost:5555/check_friend_request?user_id=${user_id}&sender_id=${sender_id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+
+    return response.data.exists; // true или false
+  } catch (error) {
+    console.error("Ошибка при проверке запроса:", error);
+    return false;
+  }
+};
+
+
+export const CancelFriendRequest = async (user_id: String, sender_id: String) => {
+  try {
+    const user = JSON.parse(localStorage.getItem("user") as string);
+    const token = user.token;
+
+    await axios.delete(
+      `http://localhost:5555/cancel_friend_request?user_id=${user_id}&sender_id=${sender_id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+
+    return { success: true };
+  } catch (error) {
+    console.error("Ошибка при отмене запроса:", error);
+    return { success: false };
+  }
+};
