@@ -97,9 +97,9 @@ export default function Chat() {
       sender_id: sender_id,
       getter_id: getter_id,
       text: messageText,
-      createdAt: new Date().toISOString(),
       sender_ava: user.ava,
       sender_name: user.username,
+      createdAt: Date.now(),
     };
 
     // @ts-ignore
@@ -109,87 +109,96 @@ export default function Chat() {
   };
 
   return (
-    <>
+      <>
 
-      <div className="message_user_interface">
-        {users
-          .filter(user => user._id === getter_id)
-          .map((users) => (
+        <div className="message_user_interface">
+          {users
+              .filter(user => user._id === getter_id)
+              .map((users) => (
 
-            <div key={users.id} className=".friends-container">
+                  <div key={users.id} className=".friends-container">
 
-              <NavLink className="message_interface_item1" to={'/profile'}>
-                <HiChevronLeft className="message_interface_item2" />
-                <div className="message_interface_item3">back</div>
-              </NavLink>
+                    <NavLink className="message_interface_item1" to={'/profile'}>
+                      <HiChevronLeft className="message_interface_item2"/>
+                      <div className="message_interface_item3">back</div>
+                    </NavLink>
 
-              <img src={users.ava} className="message_user_interface_ava" />
+                    <img src={users.ava} className="message_user_interface_ava"/>
 
-              <div className="message_user_interface-username">{users.username}</div>
-              <div className="offline">Offline</div>
+                    <div className="message_user_interface-username">{users.username}</div>
+                    <div className="offline">Offline</div>
 
-            </div>
-          ))}
-      </div>
-
-
-      <div className="message_interface">
-        <br /><br />
-        <div className="message_interface_sender_message">
-          {
-            isLoading ? (
-              <div className="no_message">Загрузка...</div>
-            ) : (
-              DataMessages
-                .filter(messages =>
-                  (messages.sender_id === sender_id && messages.getter_id === getter_id) ||
-                  (messages.sender_id === getter_id && messages.getter_id === sender_id)
-                )
-                .length === 0 && messages.length === 0? (
-                <div className="no_message">No message</div>
-              ) : (
-                DataMessages
-                  .filter(messages =>
-                    (messages.sender_id === sender_id && messages.getter_id === getter_id) ||
-                    (messages.sender_id === getter_id && messages.getter_id === sender_id)
-                  )
-                  .map((DataMessages) => (
-                    <div key={DataMessages.id}>
-                      <div className="message_interface_all" key={DataMessages.id}><br />
-                        <img src={DataMessages.sender_ava} className="message_interface_sender_ava_into" />
-                        <div className="message_interface_sender_name_into">{DataMessages.sender_name}</div>
-                        <div className="message_interface_sender_time_into">{formatDate2(DataMessages.createdAt)}</div>
-                        <div className="message_interface_sender_message_into">{DataMessages.message}</div>
-                      </div>
-                    </div>
-                  ))))}
-
-
-          {messages.map((msg, index) => (
-            <div key={index} className="message_interface_message2">
-              <img src={msg.sender_ava} alt="avatar" className="message_interface_sender_ava_into" />
-              <div className="message_interface_sender_name_into">{msg.sender_name}</div>
-              <div className="message_interface_sender_time_into">{formatDate2(msg.createdAt)}</div><br/>
-              <div className="message_interface_sender_message_into2">{msg.text}</div>
-            </div>
-          ))}
-
-
+                  </div>
+              ))}
         </div>
-      </div>
 
-      <div className="chat-input">
-        <input
-          className="message_write_message"
-          type="text"
-          value={messageText}
-          onChange={(e) => setMessageText(e.target.value)}
-          placeholder="Type a message..."
-        />
-        <BiSend className="ico_for_send-inmessage" onClick={sendMessage} />
-      </div>
 
-    </>
+        <div className="message_interface">
+          <br/><br/>
+          <div className="message_interface_sender_message">
+            {
+              isLoading ? (
+                  <div className="no_message">Загрузка...</div>
+              ) : (
+                  DataMessages
+                      .filter(messages =>
+                          (messages.sender_id === sender_id && messages.getter_id === getter_id) ||
+                          (messages.sender_id === getter_id && messages.getter_id === sender_id)
+                      )
+                      .length === 0 && messages.length === 0 ? (
+                      <div className="no_message">No message</div>
+                  ) : (
+                      DataMessages
+                          .filter(messages =>
+                              (messages.sender_id === sender_id && messages.getter_id === getter_id) ||
+                              (messages.sender_id === getter_id && messages.getter_id === sender_id)
+                          )
+                          .map((DataMessages) => (
+                              <div key={DataMessages.id}>
+                                <div className="message_interface_all" key={DataMessages.id}><br/>
+                                  <img src={DataMessages.sender_ava} className="message_interface_sender_ava_into"/>
+                                  <div className="message_interface_sender_name_into">{DataMessages.sender_name}</div>
+                                  <div
+                                      className="message_interface_sender_time_into">{formatDate2(DataMessages.createdAt)}</div>
+                                  <div className="message_interface_sender_message_into">{DataMessages.message}</div>
+                                </div>
+                              </div>
+                          ))))}
+
+
+            {messages.map((msg, index) => (
+                <div key={index} className="message_interface_message2">
+                  <img src={msg.sender_ava} alt="avatar" className="message_interface_sender_ava_into"/>
+                  <div className="message_interface_sender_name_into">{msg.sender_name}</div>
+                  <div className="message_interface_sender_time_into">{formatDate2(msg.createdAt)}</div>
+                  <br/>
+                  <div className="message_interface_sender_message_into2">{msg.text}</div>
+                </div>
+            ))}
+
+
+          </div>
+        </div>
+
+        <div className="chat-input">
+          <input
+              className="message_write_message"
+              type="text"
+              value={messageText}
+              onChange={(e) => setMessageText(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  sendMessage();
+                }
+              }}
+              placeholder="Type a message..."
+          />
+          <BiSend className="ico_for_send-inmessage" onClick={sendMessage}/>
+        </div>
+
+
+      </>
   );
 }
 

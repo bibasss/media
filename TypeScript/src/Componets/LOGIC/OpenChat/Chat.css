@@ -49,6 +49,7 @@
     position: absolute;
     margin: 129px 290px;
     width: 850px;
+    max-width: 850px;
     min-height: 630px;
     max-height: 630px;
     overflow-y: auto;
@@ -122,19 +123,19 @@
 .message_write_message{
     position: absolute;
     margin: -25px 10px;
-    width: 500px;
+    width: 848px;
     height: 40px;
 }
 
 .ico_for_send-inmessage{
     position: absolute;
-    margin: -25px 550px;
-    font-size: 30px;
+    margin: -20px 820px;
+    font-size: 35px;
 }
 
 .chat-input{
     position: absolute;
-    margin: 790px 350px;
+    margin: 788px 280px;
 }
 
 .no_message{

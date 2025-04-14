@@ -57,6 +57,7 @@ a{
     font-size: 30px;
     color: black;
 }
+.dark-mode .tobe_logout_button,
 .dark-mode {
     background-color: black;
     color: white;
@@ -65,7 +66,7 @@ a{
     background-color: #282828;
 }
 
-
+.dark-mode .checkProfile_info_about_user,
 .dark-mode .chats_maincontent,
 .dark-mode .dark-mode_background,
 .dark-mode .edit_profile_fisrt,
@@ -99,6 +100,8 @@ a{
     background-color: white;
 }
 
+
+.dark-mode .ico_for_send-inmessage,
 .dark-mode .profile_user_edit_profile_tetx,
 .dark-mode .profile_user_more_ico{
     color: black;
