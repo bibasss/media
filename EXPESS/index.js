@@ -19,7 +19,7 @@ app.use(cors());
 app.use('/api/upload', uploadRouter);
 app.use(
     cors({
-        origin: 'https://media-o38z.vercel.app',
+        origin: 'http://localhost:5173',
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type'],
     })
